@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/registro.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <title>Atma - Registro</title>
+</head>
+
+<body>
+    <main class="conteudo">
+        <form class="formulario-registro">
+            <section class="formulario-itens">
+                <h1 class="titulo-formulario">Sign Up</h1>
+                <div class="nome-completo">
+                    <div class="wrap-nome">
+                        <label for="nome" class="label-input">Nome</label>
+                        <input type="name" id="nome" placeholder="Digite seu Nome" class="input-registro input-nome"
+                            required>
+                    </div>
+                    <div class="wrap-sobrenome">
+                        <label for="sobrenome" class="label-input">Sobrenome</label>
+                        <input type="last name" id="sobrenome" placeholder="Digite seu Sobrenome" class="input-registro input-sobrenome"
+                            required>
+                    </div>
+                </div>
+                <label for="email" class="label-input">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu E-mail" class="input-registro input-email"
+                    required>
+
+                <label for="senha" class="label-input">Senha <p class="senha-diferente2"></p></label>
+                <input type="password" id="senha" placeholder="Digite uma Senha" class="input-registro input-senha"
+                    required>
+
+                <label for="confirmar-senha" class="label-input">Confirmar Senha<p id="senha-diferente"></p></label>
+                <input type="password" id="confirmar-senha" placeholder="Digite a Senha anterior" class="input-registro input-confirmarSenha"
+                    required focusout="checaSenha()">
+
+                <button type="submit" class="btn-registrar" disabled>Sign Up</button>
+            </section>
+        </form>
+
+    </main>
+    <script src="js/registro.js"></script>
+</body>
+
+</html>
