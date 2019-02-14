@@ -13,9 +13,11 @@ let senhasConferem = false;
 function checaSenha() {
     const conteudoSenha = $inputSenha.value;
     const conteudoConfirmarSenha = $inputConfirmarSenha.value;
-    if (conteudoSenha == conteudoConfirmarSenha){
+    if (conteudoSenha == conteudoConfirmarSenha && conteudoSenha.length >= 3){
         $labelSenha.innerHTML = '';
         return senhasConferem = true;
+    }else if (conteudoSenha.length <= 3 && conteudoConfirmarSenha.length <= 3){
+        // $labelSenha.innerHTML = 'Digite uma senha válida.'
     }else{
         $labelSenha.innerHTML = 'As senhas precisam ser iguais.'
         checkForm();
@@ -27,21 +29,22 @@ function checaSenha() {
 
 
 
+
+
 function checkForm(){
-    if ($inputNome.value.length > 2 && $inputNome.value.length < 20 && $inputSobrenome.value.length > 2 && $inputEmail.value.length > 7 && senhasConferem == true){
+    if ($inputNome.value.length > 2 && $inputNome.value.length < 20 && $inputSobrenome.value.length > 2 && $inputEmail.value.length > 7 && senhasConferem == true && $inputSenha.value.length >= 3 && $inputConfirmarSenha.value.length >=3){
         // console.log('asdf')
         // console.log($inputNome.value.length > 2 && $inputSobrenome.value.length > 2 && $inputEmail.value.length > 7 && senhasConferem == true)
         $botaoRegistro.classList.add('-active-btn');
         $botaoRegistro.removeAttribute('disabled');
     }else{
         $botaoRegistro.classList.remove('-active-btn');
-
         $botaoRegistro.addAttribute('disabled');
-
     }
 }
 
-window.addEventListener('keydown', event =>{
+window.addEventListener('keyup', event =>{
+    checaSenha();
     checkForm();
 })
 window.addEventListener('click', event =>{
